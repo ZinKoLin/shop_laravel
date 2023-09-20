@@ -308,7 +308,7 @@
                                             <img src="{{asset('adminbackend/assets/images/avatars/avatar-11.png')}}" class="msg-avatar" alt="user avatar">
                                         </div>
                                         <div class="flex-grow-1">
-                                            <h6 class="msg-name">Johnny Seitz <span class="msg-time float-end">5 days
+                                            <h6 class="msg-name">Zin Ko Lin<span class="msg-time float-end">5 days
 												ago</span></h6>
                                             <p class="msg-info">All the Lorem Ipsum generators</p>
                                         </div>
@@ -328,7 +328,7 @@
 " class="user-img" alt="user avatar">
                     <div class="user-info ps-3">
                         <p class="user-name mb-0">{{ Auth::user()->name }}</p>
-                        <p class="designattion mb-0">{{ Auth::user()->username }}</p>
+                        <p class="designattion mb-0">{{ Auth::user()->username e}}</p>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
