@@ -52,10 +52,19 @@ Route::middleware(['auth','role:admin'])->group(function (){
 
 });
 
-
+//vendor Dashboard
 Route::middleware(['auth','role:vendor'])->group(function (){
     Route::get('/vendor/dashboard',[VendorController::class,'vendorDashboard'])->name('#vendor.dashboard');
+    Route::get('/vendor/logout',[VendorController::class,'vendorDestroy'])->name('#vendor.logout');
+    Route::get('/vendor/profile',[VendorController::class,'vendorProfile'])->name('#vendor.profile');
+    Route::post('/vendor/profile/store',[VendorController::class,'vendorProfileStore'])->name('#vendor.profile.store');
+    Route::get('/vendor/password/change',[VendorController::class,'vendorChangPassword'])->name('#vendor.change.password');
+    Route::post('/vendor/password/update',[VendorController::class,'vendorUpdatePassword'])->name('#vendor.update.password');
+
+
+
 
 });
 
 Route::get('admin/login',[AdminController::class,'adminLogin']);
+Route::get('vendor/login',[VendorController::class,'vendorLogin']);
