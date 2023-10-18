@@ -130,6 +130,7 @@ Route::middleware(['auth'])->group(function() {
             Route::get('/edit/subcategory/{id}' , 'editSubCategory')->name('edit.subcategory');
             Route::post('/update/subcategory' , 'updateSubCategory')->name('update.subcategory');
             Route::get('/delete/subcategory/{id}' , 'deleteSubCategory')->name('delete.subcategory');
+            Route::get('/subcategory/ajax/{category_id}','getSubCategory');
 
         });
 
