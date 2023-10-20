@@ -14,14 +14,14 @@
 
         <li>
             <a href="{{route("#admin.dashboard")}}">
-                <div class="parent-icon"><i class='bx bx-cookie'></i>
+                <div class="parent-icon"><i class='bx bx-home-circle'></i>
                 </div>
                 <div class="menu-title">DashBoard</div>
             </a>
         </li>
         <li>
             <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                <div class="parent-icon"><i class='bx bx-badge-check'></i>
                 </div>
                 <div class="menu-title">Brand</div>
             </a>
@@ -52,7 +52,7 @@
 
         <li>
             <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bx bx-category"></i>
+                <div class="parent-icon"><i class="bx bx-list-ol"></i>
                 </div>
                 <div class="menu-title">SubCategory</div>
             </a>
@@ -67,7 +67,7 @@
 
         <li>
             <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bx bx-category"></i>
+                <div class="parent-icon"><i class="bx bx-cookie"></i>
                 </div>
                 <div class="menu-title">Product Manage</div>
             </a>
@@ -83,7 +83,7 @@
 
         <li>
             <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class='bx bx-cart'></i>
+                <div class="parent-icon"><i class='bx bx-store-alt'></i>
                 </div>
                 <div class="menu-title">Vendor Manage</div>
             </a>
