@@ -154,8 +154,9 @@ Route::middleware(['auth'])->group(function() {
 
     // Product All Route
     Route::controller(ProductController::class)->group(function(){
-        Route::get('/all/product' , 'AllProduct')->name('all.product');
-        Route::get('/add/product' , 'AddProduct')->name('add.product');
+        Route::get('/all/product' , 'allProduct')->name('all.product');
+        Route::get('/add/product' , 'addProduct')->name('add.product');
+        Route::post('/store/product' , 'storeProduct')->name('store.product');
 
 
 
