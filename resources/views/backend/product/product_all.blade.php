@@ -9,8 +9,8 @@
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"></li>
-								<li class="breadcrumb-item active" aria-current="page">Al<a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-                                l Product</li>
+								<li class="breadcrumb-item active" aria-current="page"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                                All Product <span class="badge rounded-pill bg-danger">{{count($products)}}</span></li>
 							</ol>
 						</nav>
 					</div>
@@ -48,14 +48,32 @@
 				<td>{{ $item->product_name }}</td>
 				<td>{{ $item->selling_price }}</td>
 				<td>{{ $item->product_qty }}</td>
-				<td>{{ $item->discount_price }}</td>
+				<td>
+                    @if($item->discount_price ==  0)
+                        <span class="badge rounded-pill bg-info">No Discount</span>
+                    @else
+                        @php
+                           // $amount = $item->selling_price - $item->discount_price;
+                            $dis = ($item->discount_price/$item->selling_price) * 100;
+                        @endphp
+                        <span class="badge rounded-pill bg-danger"> {{ round($dis) }}%</span>
+                    @endif
+                </td>
+
 				<td>{{ $item->status }}</td>
 
 				<td>
-<a href="{{ route('edit.category',$item->id) }}" class="btn btn-info">Edit</a>
-<a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger" id="delete" >Delete</a>
+                    <a href="{{ route('edit.product',$item->id) }}" class="btn btn-info"><i class="fa fa-pencil"></i> </a>
+                    <a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger" id="delete" ><i class="fa fa-trash"></i></a>
+                    <a href="{{ route('edit.category',$item->id) }}" class="btn btn-warning" title="Details Page"> <i class="fa fa-eye"></i> </a>
+                    @if($item->status == 1)
+                        <a href="{{ route('edit.category',$item->id) }}" class="btn btn-primary" title="Inactive"> <i class="fa-solid fa-thumbs-down"></i> </a>
+                    @else
+                        <a href="{{ route('edit.category',$item->id) }}" class="btn btn-primary" title="Active"> <i class="fa-solid fa-thumbs-up"></i> </a>
+                    @endif
 
-				</td>
+
+                </td>
 			</tr>
 			@endforeach
 
