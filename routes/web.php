@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VendorController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\RedirectIfAuthenticated;
 
 
 /*
@@ -85,9 +86,9 @@ Route::middleware(['auth','role:vendor'])->group(function (){
 
 
 });
-
-Route::get('admin/login',[AdminController::class,'adminLogin']);
-Route::get('/vendor/login', [VendorController::class, 'VendorLogin'])->name('vendor.login');
+//middle ware add
+Route::get('admin/login',[AdminController::class,'adminLogin'])->middleware(RedirectIfAuthenticated::class);
+Route::get('/vendor/login', [VendorController::class, 'VendorLogin'])->name('vendor.login')->middleware(RedirectIfAuthenticated::class);
 Route::get('/become/vendor', [VendorController::class, 'BecomeVendor'])->name('become.vendor');
 Route::post('/vendor/register', [VendorController::class, 'VendorRegister'])->name('vendor.register');
 
@@ -159,6 +160,15 @@ Route::middleware(['auth'])->group(function() {
         Route::post('/store/product' , 'storeProduct')->name('store.product');
         Route::get('/edit/product/{id}','editProduct')->name('edit.product');
         Route::post('/update/product' , 'updateProduct')->name('update.product');
+        Route::post('/update/product' , 'updateProduct')->name('update.product');
+        Route::post('/update/product/thambnail' , 'updateProductThambnail')->name('update.product.thambnail');
+        Route::post('/update/product/multiimage' , 'updateProductMultiImage')->name('update.product.multiimage');
+        Route::get('/product/multiimg/delete/{id}' , 'multiImageDelete')->name('product.multiimg.delete');
+        Route::get('/product/inactive/{id}','productInactive')->name('product.inactive');
+        Route::get('/product/active/{id}','productActive')->name('product.active');
+        Route::get('/product/delete/{id}' , 'productDelete')->name('delete.product');
+
+
 
 
 
