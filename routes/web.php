@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -168,10 +169,15 @@ Route::middleware(['auth'])->group(function() {
         Route::get('/product/active/{id}','productActive')->name('product.active');
         Route::get('/product/delete/{id}' , 'productDelete')->name('delete.product');
 
+    });
 
-
-
-
+    Route::controller(SliderController::class)->group(function (){
+        Route::get('/all/slider','allSlider')->name('all.slider');
+        Route::get('/add/slider','addSlider')->name('add.slider');
+        Route::post('/store/slider','storeSlider')->name('store.slider');
+        Route::get('/edit/slider{id}','editSlider')->name('edit.slider');
+        Route::post('/update/slider','updateSlider')->name('update.slider');
+        Route::get('/delete/slider{id}','deleteSlider')->name('delete.slider');
     });
 
 });//endmiddleware

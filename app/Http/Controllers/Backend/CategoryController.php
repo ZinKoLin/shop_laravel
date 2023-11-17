@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
+
 class CategoryController extends Controller
 {
     public function allCategory(){
