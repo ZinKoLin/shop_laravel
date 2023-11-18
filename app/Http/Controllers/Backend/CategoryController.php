@@ -112,5 +112,6 @@ class CategoryController extends Controller
         return redirect()->route('all.category')->with($notification);
 
 
-    }
+    }//end
+
 }
