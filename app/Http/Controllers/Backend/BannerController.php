@@ -57,7 +57,7 @@ class BannerController extends Controller
 
             Banner::findOrFail($banner_id)->update([
                 'banner_title' => $request->banner_title,
-                'banner_url' => strtolower(str_replace(' ', '-',$request->category_name)),
+                'banner_url' =>$request->banner_url,
                 'banner_image' => $save_url,
             ]);
 
@@ -70,7 +70,7 @@ class BannerController extends Controller
         }else{
             Banner::findOrFail($banner_id)->update([
                 'banner_title' => $request->banner_title,
-                'banner_url' => strtolower(str_replace(' ', '-',$request->category_name)),
+                'banner_url' =>$request->banner_url,
             ]);
 
             $notification = array(
