@@ -27,7 +27,7 @@
                         <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
+                                    <a href="{{url('product/details/'.$product->id.'/'.$product->product_slug)}}">
                                         <img class="default-img" src="{{ asset($product->product_thambnail) }}" alt="" />
 {{--                                        <img class="hover-img" src="{{ asset($product->product_thambnail) }}" alt="" />--}}
                                     </a>
@@ -54,7 +54,7 @@
                                 <div class="product-category">
                                     <a href="shop-grid-right.html">{{$product['category']['category_name']}}</a>
                                 </div>
-                                <h2><a href="shop-product-right.html">{{($product->product_name)}}</a></h2>
+                                <h2><a href="{{url('product/details/'.$product->id.'/'.$product->product_slug)}}">{{($product->product_name)}}</a></h2>
                                 <div class="product-rate-cover">
                                     <div class="product-rate d-inline-block">
                                         <div class="product-rating" style="width: 90%"></div>
@@ -118,7 +118,7 @@
                                 <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
+                                            <a href="{{url('product/details/'.$product->id.'/'.$product->product_slug)}}">
                                                 <img class="default-img" src="{{ asset($product->product_thambnail) }}" alt="" />
                                                 {{--                                        <img class="hover-img" src="{{ asset($product->product_thambnail) }}" alt="" />--}}
                                             </a>
@@ -145,7 +145,7 @@
                                         <div class="product-category">
                                             <a href="shop-grid-right.html">{{$product['category']['category_name']}}</a>
                                         </div>
-                                        <h2><a href="shop-product-right.html">{{($product->product_name)}}</a></h2>
+                                        <h2><a href="{{url('product/details/'.$product->id.'/'.$product->product_slug)}}">{{($product->product_name)}}</a></h2>
                                         <div class="product-rate-cover">
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 90%"></div>
