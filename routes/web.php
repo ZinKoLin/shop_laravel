@@ -26,9 +26,12 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+//Route::get('/', function () {
+//    return view('frontend.index');
+//});
+
+Route::get('/',[IndexController::class,'indexCategory']);
+
 
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
@@ -196,5 +199,8 @@ Route::middleware(['auth'])->group(function() {
 ///frontend Prouct details All route
 
 Route::get('/product/details/{id}/{slug}',[IndexController::class,'productDetails']);
+
+Route::get('/vendor/details/{id}', [IndexController::class, 'vendorDetails'])->name('vendor.details');
+Route::get('/vendor/all', [IndexController::class, 'vendorAll'])->name('vendor.all');
 
 
