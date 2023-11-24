@@ -60,7 +60,7 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
+                    <a href="{{url('/')}}"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
                 </div>
                 <div class="header-right">
                     <div class="search-style-2">
@@ -241,7 +241,7 @@
 
 
                                     <li>
-                                        <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}" alt="" />{{$item->category_name}}</a>
+                                        <a href="{{url('product/category'.'/'.$item->id.'/'.$item->category_slug)}}"> <img src="{{ asset($item->category_image) }}" alt="" />{{$item->category_name}}</a>
                                     </li>
                                     @endforeach
 
@@ -250,7 +250,7 @@
                                     @foreach($categories as $item)
 
                                         <li>
-                                        <a href="shop-grid-right.html"> <img src="{{ asset($item->category_image) }}" alt="" />{{$item->category_name}}</a>
+                                        <a href="{{url('product/category'.'/'.$item->id.'/'.$item->category_slug)}}"> <img src="{{ asset($item->category_image) }}" alt="" />{{$item->category_name}}</a>
                                     </li>
                                     @endforeach
 
@@ -284,7 +284,7 @@
                             <ul>
 
                                 <li>
-                                    <a class="active" href="index.html">Home  </a>
+                                    <a class="active" href="{{url('/')}}">Home  </a>
 
                                 </li>
                                 @php
@@ -301,7 +301,7 @@
 
                                     <ul class="sub-menu">
                                         @foreach($subcategories as $item)
-                                        <li><a href="vendors-list.html">{{$item->subcategory_name}}</a></li>
+                                        <li><a href="{{url('product/subcategory'.'/'.$item->id.'/'.$item->subcategory_slug)}}">{{$item->subcategory_name}}</a></li>
                                         @endforeach
                                     </ul>
 
@@ -394,7 +394,7 @@
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
             <div class="mobile-header-logo">
-                <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
+                <a href="{{url('/')}}"><img src="{{ asset('frontend/assets/imgs/theme/logo.svg') }}" alt="logo" /></a>
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                 <button class="close-style search-close">
