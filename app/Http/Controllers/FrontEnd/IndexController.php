@@ -92,7 +92,7 @@ class IndexController extends Controller
             'color'=>$product_color,
             'size'=>$product_size
         ));
-    }
+    }//end
 
 
 }
