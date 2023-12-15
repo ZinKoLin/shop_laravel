@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\FrontEnd\IndexController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VendorController;
 use Illuminate\Support\Facades\Route;
@@ -217,6 +218,18 @@ Route::get('product/mini/cart/',[CartController::class,'addMiniCart']);
 Route::get('/minicart/product/remove/{rowId}', [CartController::class, 'removeMiniCart']);
 // Add to cart store data For Product Details Page
 Route::post('/dcart/data/store/{id}', [CartController::class, 'addToCartDetails']);
+//add to wishlist
+Route::post('/add-to-wishlist/{product_id}',[WishlistController::class,'addToWishlist']);
+
+//user middleware
+Route::middleware(['auth','role:user'])->group(function (){
+Route::controller(WishlistController::class)->group(function (){
+    Route::get('/wishlist','allWishlist')->name('wishlist');
+    Route::get('/get-wishlist-product','getWishlistProduct');
+    Route::get('/wishlist-remove/{id}' , 'wishlistRemove');
+});
+});//end group middleware
+
 
 
 
